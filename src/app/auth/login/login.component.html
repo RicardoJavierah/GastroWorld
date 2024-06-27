@@ -1,1 +1,40 @@
-<p>login works!</p>
+<mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Inicio de Sesión</mat-card-title>
+      <mat-card-subtitle>Bienvenido</mat-card-subtitle>
+    </mat-card-header>
+    <p>Accede a todos los beneficios y promociones que tenemos para ingresando o registrándote.</p>
+
+    <!--<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+
+    <mat-card-content class="container-input">
+        <mat-form-field>
+            <mat-label>Ingresa tu Correo</mat-label>
+            <input matInput #txtusuario>
+          </mat-form-field>
+          
+          <mat-form-field >
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'"  #txtpassword/>
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="clickEvent($event)"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <a href="#" style="text-decoration: none;font-style: rgb(53, 53, 225);">¿Olvidaste tu contraseña?</a>
+
+          <a id="btn-ingresar" (click)="handleAuth(txtusuario,txtpassword)" mat-fab extended routerLink=".">
+            Ingresar
+          </a>
+          <span style="font-size: 10px;">© Derechos Reservados</span>
+    </mat-card-content>
+  </mat-card>
+
+
+  

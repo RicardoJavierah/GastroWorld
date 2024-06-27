@@ -50,4 +50,11 @@
 #container-name-categoria div:hover{
     background-color: blue;
 }
+#container-btn-user{
+    display: flex;
+    align-items: center;
+}
+.btn-user,.btn-cart{
+    margin: 5px;
 
+}

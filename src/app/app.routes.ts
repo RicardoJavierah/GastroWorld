@@ -1,10 +1,19 @@
 import { Routes } from '@angular/router';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { SliderComponent } from './page/principal/slider/slider.component';
-import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
+import { InicioComponent } from './page/principal/inicio/inicio.component';
+import { LoginComponent } from './auth/login/login.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-    {path:"navbar",component:NavbarComponent},
+    /*{path:"navbar",component:NavbarComponent},
     {path:"slider",component:SliderComponent},
-    {path:"sidenav",component:SidenavComponent}
+    {path:"sidenav",component:SidenavComponent},*/
+    {
+        path:"login",
+        component:LoginComponent,
+        canActivate:[authGuard]
+    },
+    {
+        path:"principal",
+        component:InicioComponent
+    },
 ];

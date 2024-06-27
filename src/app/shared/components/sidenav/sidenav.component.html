@@ -1,15 +1,17 @@
 <mat-toolbar>
     <button mat-icon-button (click)="sidenav.toggle()">
             @if (!sidenav.opened) {
-                <mat-icon >menu</mat-icon>
+                <mat-icon class="mat-icon-size">menu</mat-icon>
             }@else {
-                <mat-icon >close</mat-icon>
+                <mat-icon class="mat-icon-size">close</mat-icon>
             }
         <!-- <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
         <mat-icon *ngIf="sidenav.opened">close</mat-icon>-->
-        My page
     </button>
+    <app-navbar></app-navbar>
+    
 </mat-toolbar>
+
 
 <mat-sidenav-container>
     <mat-sidenav>
@@ -31,6 +33,7 @@
 
     <mat-sidenav-content>
         <div class="content">
+            
             <router-outlet></router-outlet>            
         </div>
     </mat-sidenav-content>

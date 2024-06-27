@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { MatSidenav } from '@angular/material/sidenav';
 import { NgIf } from '@angular/common';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [AngularMaterialModule,RouterOutlet,NgIf],
+  imports: [AngularMaterialModule,RouterOutlet,NgIf,NavbarComponent],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.css'
 })
@@ -29,8 +30,8 @@ export class SidenavComponent {
         this.sidenav.mode = "over";
         this.sidenav.close();
       }else{
-        this.sidenav.mode = "side",
-        this.sidenav.open();
+        this.sidenav.mode = "side";
+        //this.sidenav.open();
       }
 
     })
