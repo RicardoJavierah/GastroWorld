@@ -1,0 +1,53 @@
+:root{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#nav-bar{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+#menu{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+}
+#icon-navbar{
+    width: 190px;
+    height: auto;
+}
+.container-texto-menu{
+    display: flex;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+}
+#icon-menu{
+    font-size: 25px;
+}
+#container-icon-menu{
+    display: flex;
+    align-items: center;
+}
+#nav-bar-categoria{
+    width: 100%;
+}
+#container-name-categoria{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px;
+    list-style: none;
+}
+#container-name-categoria div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 40px;
+    width: 14%;
+    list-style: none;
+    padding: 0px;
+}
+#container-name-categoria div:hover{
+    background-color: blue;
+}
+

@@ -1,0 +1,12 @@
+
+*{
+    border: solid red 1px;
+}
+#container-slider{
+    width: 100%;
+    height: 300px;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
