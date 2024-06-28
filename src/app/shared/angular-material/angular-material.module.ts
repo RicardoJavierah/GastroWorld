@@ -23,7 +23,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-     MatSelectModule,
+    MatSelectModule,
+
   ]
 })
 export class AngularMaterialModule { }

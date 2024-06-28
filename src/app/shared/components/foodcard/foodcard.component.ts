@@ -9,5 +9,4 @@ import { AngularMaterialModule } from '../../angular-material/angular-material.m
   styleUrl: './foodcard.component.css'
 })
 export class FoodcardComponent {
-
 }
