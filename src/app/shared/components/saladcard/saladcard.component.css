@@ -15,3 +15,8 @@
   #mat-card-content-promocion{
     display: flex;
   }
+  #info{
+    width: auto;
+    height: 120px;
+  }
+  
