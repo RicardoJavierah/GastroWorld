@@ -1,0 +1,67 @@
+<section class="container-registrar">
+    <mat-card class="container-form">
+        <mat-card-header>
+            <mat-card-title>Registro de Usuario</mat-card-title>
+            <mat-card-subtitle>Bienvenido, estas cerca a un nuevo mundo!</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>      
+            <div class="container-inputs">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Nombres</mat-label>
+                    <input matInput placeholder="Ej. ronald" value="">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Primer Apellido</mat-label>
+                    <input matInput placeholder="Ej. Gonzales" value="">
+                </mat-form-field>
+            </div>  
+                
+            <div class="container-inputs">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Segundo Apellido</mat-label>
+                    <input matInput placeholder="Ej. Sanchez" value="">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>DNI</mat-label>
+                    <input matInput placeholder="Ej. 71456787" value="">
+                </mat-form-field>
+            </div>
+
+            <div class="container-inputs">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Correo</mat-label>
+                    <input matInput placeholder="Ej. ronal@gmail.com" value="">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Celular</mat-label>
+                    <input matInput placeholder="Ej. 987876567" value="">
+                </mat-form-field>
+            </div>
+
+            <div class="container-inputs">
+                <mat-form-field>
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput placeholder="********" [type]="hide ? 'password' : 'text'"/>
+                    <button
+                      mat-icon-button
+                      matSuffix
+                      (click)="clickEvent($event)"
+                      [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide"
+                    >
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+            </div>                
+
+                <div class="container-btn-registrar">
+                    <a id="btn-registrar" mat-fab extended routerLink=".">
+                        Registrar
+                      </a>
+                </div>
+        </mat-card-content>
+    </mat-card>
+</section>

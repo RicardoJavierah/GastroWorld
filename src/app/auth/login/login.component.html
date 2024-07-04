@@ -1,10 +1,10 @@
-<mat-card class="example-card" appearance="outlined">
+<section class="container-login">
+  <mat-card class="login-card" appearance="outlined">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>Inicio de Sesión</mat-card-title>
       <mat-card-subtitle>Bienvenido</mat-card-subtitle>
     </mat-card-header>
-    <p>Accede a todos los beneficios y promociones que tenemos para ingresando o registrándote.</p>
+    <p>Accede a todos los beneficios y promociones que tenemos para ti ingresando o registrándote.</p>
 
     <!--<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
 
@@ -32,9 +32,11 @@
           <a id="btn-ingresar" (click)="handleAuth(txtusuario,txtpassword)" mat-fab extended routerLink=".">
             Ingresar
           </a>
+          <a routerLink="/registrarUsuario" style="text-decoration: none;font-style: rgb(53, 53, 225);">Crea una cuenta aquí!</a>
+          <br>
           <span style="font-size: 10px;">© Derechos Reservados</span>
     </mat-card-content>
   </mat-card>
-
+</section>
 
   

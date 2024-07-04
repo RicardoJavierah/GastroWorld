@@ -4,21 +4,35 @@ import { LoginComponent } from './auth/login/login.component';
 import { authGuard } from './guards/auth.guard';
 import { EnsaladasComponent } from './page/ensaladas/ensaladas.component';
 import { PastasComponent } from './page/pastas/pastas.component';
+import { RegistrarComponent } from './auth/registrar/registrar/registrar.component';
 
 export const routes: Routes = [
     /*{path:"navbar",component:NavbarComponent},
     {path:"slider",component:SliderComponent},
     {path:"sidenav",component:SidenavComponent},*/
-    {path: "ensaladas", component: EnsaladasComponent},
-    {path: "pastas", component:PastasComponent},
     {
         path:"login",
         component:LoginComponent,
         canActivate:[authGuard]
     },
     {
+        path:"registrarUsuario",
+        component:RegistrarComponent
+    },
+    {
         path:"principal",
         component:InicioComponent
     },
-    {path: "", redirectTo: "login", pathMatch:"full"}
+    {
+        path: "ensaladas", 
+        component: EnsaladasComponent
+    },
+    {   path: "pastas",
+        component:PastasComponent
+    },    
+    {
+        path: "**", 
+        redirectTo: "login", 
+        pathMatch:"full"
+    }
 ];
