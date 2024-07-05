@@ -1,6 +1,6 @@
 export interface usuarioInterface{
 
-    id:number;
+    id?:number;
     nombreUsuario:string;
     primerApellido:string;
     segundoApellido:string;

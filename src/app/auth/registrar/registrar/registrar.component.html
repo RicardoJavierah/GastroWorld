@@ -8,43 +8,43 @@
             <div class="container-inputs">
                 <mat-form-field class="example-full-width">
                     <mat-label>Nombres</mat-label>
-                    <input matInput placeholder="Ej. ronald" value="">
+                    <input matInput placeholder="Ej. ronald" value="" #txtnombre>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
                     <mat-label>Primer Apellido</mat-label>
-                    <input matInput placeholder="Ej. Gonzales" value="">
+                    <input matInput placeholder="Ej. Gonzales" value="" #txtPrimerApellido>
                 </mat-form-field>
             </div>  
                 
             <div class="container-inputs">
                 <mat-form-field class="example-full-width">
                     <mat-label>Segundo Apellido</mat-label>
-                    <input matInput placeholder="Ej. Sanchez" value="">
+                    <input matInput placeholder="Ej. Sanchez" value="" #txtSegundoApellido>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
                     <mat-label>DNI</mat-label>
-                    <input matInput placeholder="Ej. 71456787" value="">
+                    <input matInput placeholder="Ej. 71456787" value="" #txtDni>
                 </mat-form-field>
             </div>
 
             <div class="container-inputs">
                 <mat-form-field class="example-full-width">
                     <mat-label>Correo</mat-label>
-                    <input matInput placeholder="Ej. ronal@gmail.com" value="">
+                    <input matInput placeholder="Ej. ronal@gmail.com" value="" #txtCorreo>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
                     <mat-label>Celular</mat-label>
-                    <input matInput placeholder="Ej. 987876567" value="">
+                    <input matInput placeholder="Ej. 987876567" value="" #txtCelular>
                 </mat-form-field>
             </div>
 
             <div class="container-inputs">
                 <mat-form-field>
                     <mat-label>Contraseña</mat-label>
-                    <input matInput placeholder="********" [type]="hide ? 'password' : 'text'"/>
+                    <input matInput placeholder="********" [type]="hide ? 'password' : 'text'" #txtPassword/>
                     <button
                       mat-icon-button
                       matSuffix
@@ -58,7 +58,7 @@
             </div>                
 
                 <div class="container-btn-registrar">
-                    <a id="btn-registrar" mat-fab extended routerLink=".">
+                    <a id="btn-registrar" mat-fab extended (click)="handleRegistrar(txtnombre,txtPrimerApellido,txtSegundoApellido,txtDni,txtCorreo,txtCelular,txtPassword)">
                         Registrar
                       </a>
                 </div>

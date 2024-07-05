@@ -12,8 +12,7 @@ export const routes: Routes = [
     {path:"sidenav",component:SidenavComponent},*/
     {
         path:"login",
-        component:LoginComponent,
-        canActivate:[authGuard]
+        component:LoginComponent
     },
     {
         path:"registrarUsuario",
@@ -21,15 +20,18 @@ export const routes: Routes = [
     },
     {
         path:"principal",
-        component:InicioComponent
+        component:InicioComponent,
+        canActivate:[authGuard]
     },
     {
         path: "ensaladas", 
-        component: EnsaladasComponent
+        component: EnsaladasComponent,
+        canActivate:[authGuard]
     },
     {   path: "pastas",
-        component:PastasComponent
-    },    
+        component:PastasComponent,
+        canActivate:[authGuard]
+    },   
     {
         path: "**", 
         redirectTo: "login", 

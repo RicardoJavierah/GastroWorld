@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component,inject,signal } from '@angular/core'
 import { AngularMaterialModule } from '../../shared/angular-material/angular-material.module';
 import { LoginServiceService } from '../../service/login/login-service.service';
 import { RouterLink } from '@angular/router';
-import { usuarioInterface } from '../../models/usuario.interface';
 import { credencialesInterface } from '../credencial.interface';
 
 
