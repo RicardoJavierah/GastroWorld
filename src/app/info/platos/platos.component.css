@@ -1,0 +1,30 @@
+.container-promocion{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 40px;
+}
+h1{
+    text-align: center;
+}
+
+.detalle-container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .image {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .text {
+    flex: 2;
+    font-size: 1.2em;
+  }

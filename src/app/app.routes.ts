@@ -1,15 +1,18 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './page/principal/inicio/inicio.component';
 import { LoginComponent } from './auth/login/login.component';
 import { authGuard } from './guards/auth.guard';
 import { EnsaladasComponent } from './page/ensaladas/ensaladas.component';
 import { PastasComponent } from './page/pastas/pastas.component';
+import { PlatosComponent } from './info/platos/platos.component';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
     /*{path:"navbar",component:NavbarComponent},
     {path:"slider",component:SliderComponent},
     {path:"sidenav",component:SidenavComponent},*/
     {path: "ensaladas", component: EnsaladasComponent},
+    {path: "platos", component:PlatosComponent},
     {path: "pastas", component:PastasComponent},
     {
         path:"login",
@@ -21,4 +24,5 @@ export const routes: Routes = [
         component:InicioComponent
     },
     {path: "", redirectTo: "login", pathMatch:"full"}
+
 ];

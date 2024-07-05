@@ -1,14 +1,16 @@
 import { Component, Input, input } from '@angular/core';
 import { AngularMaterialModule } from '../../angular-material/angular-material.module';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-saladcard',
   standalone: true,
-  imports: [AngularMaterialModule],
+  imports: [AngularMaterialModule, RouterLink],
   templateUrl: './saladcard.component.html',
   styleUrl: './saladcard.component.css'
 })
 export class SaladcardComponent {
+  constructor(private router: Router){}
 
   @Input()titulo:String="";
   @Input()ingrediente1:String="";
@@ -16,6 +18,10 @@ export class SaladcardComponent {
   @Input()ingrediente3:String="";
   @Input()ingrediente4:String="";
   @Input()ingrediente5:String="";
+
+  navigateToPage(){
+    this.router.navigate(['/platos'])
+  }
 
   count: number = 0;
   increment(){
