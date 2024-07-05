@@ -5,6 +5,7 @@ import { authGuard } from './guards/auth.guard';
 import { EnsaladasComponent } from './page/ensaladas/ensaladas.component';
 import { PastasComponent } from './page/pastas/pastas.component';
 import { RegistrarComponent } from './auth/registrar/registrar/registrar.component';
+import { CarritoCompraComponent } from './page/carrito-compra/carrito-compra.component';
 
 export const routes: Routes = [
     /*{path:"navbar",component:NavbarComponent},
@@ -31,6 +32,10 @@ export const routes: Routes = [
     {   path: "pastas",
         component:PastasComponent,
         canActivate:[authGuard]
+    },
+    {
+        path:"carrito",
+        component:CarritoCompraComponent
     },   
     {
         path: "**", 
