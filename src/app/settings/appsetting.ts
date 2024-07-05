@@ -1,3 +1,3 @@
 export const appsetting={
-    apiURL : "https://apimocha.com/gastroworld/"
+    apiURL : "http://localhost:8080/api"
 }

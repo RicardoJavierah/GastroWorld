@@ -48,7 +48,7 @@
     padding: 0px;
 }
 #container-name-categoria div:hover{
-    background-color: blue;
+    background-color: rgb(146, 146, 151);
 }
 #container-btn-user{
     display: flex;
