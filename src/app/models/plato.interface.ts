@@ -14,6 +14,10 @@ fibra:number,
 vitamina:string,
 mineral:string,
 alergeno:string,
+categoriaPlato: {
+    id: number;
+    categoria: string;
+  };
 }
 
 /*id_plato INT AUTO_INCREMENT NOT NULL,

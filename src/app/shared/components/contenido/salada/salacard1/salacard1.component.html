@@ -1,20 +1,22 @@
 <mat-card class="example-card" appearance="outlined">
-  <mat-card-content id="mat-card-content-promocion">
-  
-    <mat-card-content>
+  <div id="mat-card-content-promocion">
+    <div id="info-section">
       <ul id="info">
+        <li>{{ plato?.nombre }}</li>
+        <li>Precio: {{ plato?.precio }}</li>
+        <li>Disponible: {{ plato?.disponible }}</li>
+        <li>{{ plato?.descripcion }}</li>
         
       </ul>
       <mat-card-actions>
-        <button mat-button (click)="increment()"> + </button>
-        <button mat-button>{{ count }}</button>
-        <button mat-button (click)="decrement()"> - </button>
+        <button id="conteo" mat-button (click)="increment()"> + </button>
+        <button id="conteo" mat-button>{{ count }}</button>
+        <button id="conteo" mat-button (click)="decrement()"> - </button>
+        <button id="pedido" mat-button (click)="navigateToPage()">Hacer Pedido</button>
       </mat-card-actions>
-    </mat-card-content>
-
-    <mat-card-content routerLink="/platos">
+    </div>
+    <div id="image-section" routerLink="/platos">
       <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    </mat-card-content>
-    
-  </mat-card-content>
+    </div>
+  </div>
 </mat-card>

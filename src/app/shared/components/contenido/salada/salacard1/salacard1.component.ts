@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AngularMaterialModule } from '../../../../angular-material/angular-material.module';
+import { PlatoInterface } from '../../../../../models/plato.interface';
 
 @Component({
   selector: 'app-salacard1',
@@ -11,7 +12,8 @@ import { AngularMaterialModule } from '../../../../angular-material/angular-mate
 })
 export class Salacard1Component {
 
-
+  @Input() plato: PlatoInterface | undefined;
+  @Input() index: number | undefined;
 
   count: number = 0;
 
@@ -34,7 +36,12 @@ export class Salacard1Component {
   }
 
   navigateToPage() {
-    this.router.navigate(['/platos']);
+    this.router.navigate(['/platos'], {
+      queryParams: {
+        platoId: this.plato?.id_plato,
+        count: this.count
+      }
+    });
   }
 
 }
