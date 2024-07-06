@@ -13,10 +13,9 @@ register();
 export class SliderComponent {
 
   slider=[
-    "../../../../assets/slider/gastroWorld.png",
-    "../../../../assets/slider/img1.jpeg",
-     "../../../../assets/slider/gastroWorld.png",
-    "../../../../assets/slider/img1.jpeg"
+    "../../../../assets/slider/PromoPostre.jpg",
+    "../../../../assets/slider/PromoSaludable.jpg",
+     "../../../../assets/slider/PromoCarnes.jpg",
   ]
 
 
