@@ -16,10 +16,11 @@ export class Pastcard1Component {
   @Input() plato: PlatoInterface | undefined;
   @Input() index: number | undefined;
 
-  count: number = 0;
+  
 
   constructor(private router: Router) {}
 
+  count: number = 0;
   increment() {
     if (this.count < 10) {
       this.count++;
@@ -37,12 +38,6 @@ export class Pastcard1Component {
   }
 
   navigateToPage() {
-    this.router.navigate(['/platos'], {
-      queryParams: {
-        platoId: this.plato?.id_plato,
-        count: this.count
-      }
-    });
+    this.router.navigate(['/platos', this.plato?.id_plato]);
   }
-
-}
+};

@@ -10,29 +10,29 @@ import { PlatoService } from '../../service/plato/plato.service';
 import { PlatoInterface } from '../../models/plato.interface';
 import { AngularMaterialModule } from '../../shared/angular-material/angular-material.module';
 
+
 @Component({
-  selector: 'app-pastas',
+  selector: 'app-postre',
   standalone: true,
   imports: [NavbarComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule],
-  templateUrl: './pastas.component.html',
-  styleUrl: './pastas.component.css'
+  templateUrl: './postre.component.html',
+  styleUrl: './postre.component.css'
 })
-export class PastasComponent {
-
-  platosPasta: PlatoInterface[] = [];
+export class PostreComponent {
+  platosPostre: PlatoInterface[] = [];
 
   constructor(private platoService: PlatoService, private router: Router) { }
 
   ngOnInit(): void {
-  this.loadPlatosPasta()
+  this.loadPlatosPostre()
   }
 
-  loadPlatosPasta(): void {
-    this.platoService.getPlatosByNombreCategoriaPasta().subscribe(
+  loadPlatosPostre(): void {
+    this.platoService.getPlatosByNombreCategoriaPostre().subscribe(
       {
         next:(result)=>{
-          this.platosPasta = result
-          console.log(this.platosPasta)
+          this.platosPostre = result
+          console.log(this.platosPostre)
         }
       }
     );

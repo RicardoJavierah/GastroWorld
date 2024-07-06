@@ -1,27 +1,51 @@
-<section id="container-section-inicio">
+<section id="container-header">
+    <app-navbar></app-navbar>
+</section>
+<h1>¡Platos de Ensaladas!</h1>
+<div class="container-platos">
+@for (plato of platosEnsalada; track $index) {
+    <mat-card class="example-card" appearance="outlined">
+        <div id="mat-card-content-promocion">
+          <div id="info-section">
+            <ul id="info">
+              <h1>{{ plato.nombre }}</h1>
+              <li>Precio: {{ plato.precio }}</li>
+              <li>Disponible: {{ plato.disponible }}</li>
+              <li>{{ plato.descripcion }}</li>
+              
+            </ul>
+            <mat-card-actions>
+              <button id="conteo" mat-button (click)="increment()"> + </button>
+              <button id="conteo" mat-button>{{ count }}</button>
+              <button id="conteo" mat-button (click)="decrement()"> - </button>
+              <button id="pedido" mat-button (click)="navigateToPage()">Hacer Pedido</button>
+            </mat-card-actions>
+          </div>
+          
+          <div id="image-section" routerLink="/platos">
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          </div>
+        </div>
+      </mat-card>
+}
+</div>
+
+<!--<section id="container-section-inicio">
     <section id="container-header">
         <app-navbar></app-navbar>
     </section>
     <section id="container-main">
-        
-        <h1>¡ENSALADAS!</h1>
+        <h1>¡Pastas!</h1>
         <div class="container-promocion">
-            <app-salacard1
-            ></app-salacard1>
-            <app-salacard1 
-            ></app-salacard1>
-            <app-salacard1
-            ></app-salacard1>
+        <app-pastcard1></app-pastcard1>
+        <app-pastcard1></app-pastcard1>
+        <app-pastcard1></app-pastcard1>
         </div>
         <div class="container-promocion">
-            <app-salacard1
-            ></app-salacard1>
-            <app-salacard1
-            ></app-salacard1>
-            <app-salacard1
-            ></app-salacard1>
+        <app-pastcard1></app-pastcard1>
+        <app-pastcard1></app-pastcard1>
+        <app-pastcard1></app-pastcard1>
         </div>
-        
     </section>
-
-    <app-footer></app-footer>
+</section>
+-->
