@@ -15,7 +15,11 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
 @Component({
   selector: 'app-postre',
   standalone: true,
+<<<<<<< HEAD
   imports: [NavbarComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule, FooterComponent],
+=======
+  imports: [NavbarComponent, FooterComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule],
+>>>>>>> a6e10e58817797626f317654e6c181ee993a57bc
   templateUrl: './postre.component.html',
   styleUrl: './postre.component.css'
 })
@@ -56,7 +60,7 @@ export class PostreComponent {
     this.count = 0;
   }
 
-  navigateToPage() {
-    this.router.navigateByUrl('/platos');
+  navigateToPage(plato: PlatoInterface) {
+    this.router.navigate(['/platos'], { queryParams: { nombre: plato.nombre, precio: plato.precio, disponible: plato.disponible, descripcion: plato.descripcion } });
   }
 };

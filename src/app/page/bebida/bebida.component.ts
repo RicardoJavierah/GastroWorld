@@ -67,7 +67,7 @@ export class BebidaComponent {
     this.count = 0;
   }
 
-  navigateToPage() {
-    this.router.navigateByUrl('/platos');
+  navigateToPage(plato: PlatoInterface) {
+    this.router.navigate(['/platos'], { queryParams: { nombre: plato.nombre, precio: plato.precio, disponible: plato.disponible, descripcion: plato.descripcion } });
   }
 };

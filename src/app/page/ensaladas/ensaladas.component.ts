@@ -13,7 +13,11 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
 @Component({
   selector: 'app-ensaladas',
   standalone: true,
+<<<<<<< HEAD
   imports: [AngularMaterialModule ,NavbarComponent, SliderComponent, FoodcardComponent, SaladcardComponent, Salacard1Component, FooterComponent],
+=======
+  imports: [AngularMaterialModule, FooterComponent ,NavbarComponent, SliderComponent, FoodcardComponent, SaladcardComponent, Salacard1Component],
+>>>>>>> a6e10e58817797626f317654e6c181ee993a57bc
   templateUrl: './ensaladas.component.html',
   styleUrl: './ensaladas.component.css'
 })
@@ -55,7 +59,7 @@ export class EnsaladasComponent {
     this.count = 0;
   }
 
-  navigateToPage() {
-    this.router.navigateByUrl('/platos');
+  navigateToPage(plato: PlatoInterface) {
+    this.router.navigate(['/platos'], { queryParams: { nombre: plato.nombre, precio: plato.precio, disponible: plato.disponible, descripcion: plato.descripcion } });
   }
 };

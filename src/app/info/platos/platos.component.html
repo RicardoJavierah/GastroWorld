@@ -1,0 +1,26 @@
+<section id="container-header">
+  <app-navbar></app-navbar>
+</section>
+<section id="detalles-plato">
+  <h1 class="titulo-centrado">Detalles del Plato</h1>
+  <div *ngIf="plato" class="detalle-plato">
+    <div class="detalle-imagen">
+      <img [src]="plato.imagenUrl" alt="Imagen de {{ plato.nombre }}">
+    </div>
+    <div class="detalle-info">
+      <div class="detalle-item">
+        <strong>Nombre:</strong> {{ plato.nombre }}
+      </div>
+      <div class="detalle-item">
+        <strong>Precio:</strong> {{ plato.precio }}
+      </div>
+      <div class="detalle-item">
+        <strong>Disponible:</strong> {{ plato.disponible ? 'Sí' : 'No' }}
+      </div>
+      <div class="detalle-item">
+        <strong>Descripción:</strong>
+        <p>{{ plato.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+</section>
