@@ -1,0 +1,126 @@
+<div class="container" >
+    <div class="form-container" >
+        <!--DNI-->
+        <mat-form-field class="full-width">
+            <mat-label >DNI</mat-label>
+            <input matInput [(ngModel)]="formMesa.dni" maxlength="8" pattern="[0-8]*" required>
+            <mat-error *ngIf="formMesa.dni === ''">El DNI es requerido</mat-error>
+
+        </mat-form-field>
+        <mat-divider></mat-divider>
+
+        <!--nombre-->
+        <mat-form-field class="full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput [(ngModel)]="formMesa.nombre" required>
+            <mat-error *ngIf="formMesa.nombre === ''">El nombre es requerido</mat-error>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+
+        <!--apellido-->
+        <mat-form-field class="full-width">
+            <mat-label>Apellido</mat-label>
+            <input matInput [(ngModel)]="formMesa.apellido" required>
+            <mat-error *ngIf="formMesa.apellido === ''">El apellido es requerido</mat-error>
+        </mat-form-field>
+        
+        <mat-divider></mat-divider>
+
+
+    <!--Select asientos -->
+    <div class="selectAsiento" class="full-width">
+        <mat-form-field>
+            <mat-label>Cantidad de Personas</mat-label>
+            <mat-select [(ngModel)]="formMesa.cantidadPersonas" required>
+                    <mat-option *ngFor="let asiento of asientos" [value]="asiento">{{asiento}}</mat-option>
+                    <mat-error *ngIf="formMesa.cantidadPersonas === ''">Seleccione la cantidad de personas</mat-error>
+                
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <hr/>
+
+    <!--Select idMesa-->
+    <div class="selectAsiento" class="full-width">
+        <mat-form-field>
+            <mat-label>Selecciona tu mesa</mat-label>
+            <mat-select [(ngModel)]="formMesa.mesaId" required>
+                    <mat-option *ngFor="let mesaId of mesaId" [value]="mesaId">{{mesaId}}</mat-option>
+                    <mat-error *ngIf="formMesa.mesaId === ''">Seleccione el número de mesa</mat-error>
+                
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <hr/>
+
+    <!---Fecha-->
+    <mat-form-field class="example-full-width" class="full-width"> 
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="formMesa.fechaReservacion" required>
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+        <mat-error *ngIf="!formMesa.fechaReservacion">Seleccione una fecha de reservación</mat-error>
+    </mat-form-field>
+
+
+    <hr/>
+        
+    <div class="botones">
+    <!--BOTON REGISTRAR-->
+        <a class="btn-cart"mat-fab extended routerLink="." type="button" (click)="isFormValid() && listarCliente()">
+            <div *ngIf="mostrarResultado" class="alert alert-primary" role="alert">
+                    {{ resultadoFinal }}
+                  </div>
+                <mat-icon>done</mat-icon>
+            Registrar
+          </a>
+        
+    <!--BOTON VOLVER-->
+    <a class="btn-cart"mat-fab extended routerLink="." type="button" href="principal">
+              <mat-icon>exit_to_app</mat-icon>
+        Volver al inicio
+      </a>
+    </div>
+    <hr/>
+    </div>
+
+    
+    <!--Tabla -->
+    <div class="lista-mesa">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Dni</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col"> Cantidad de Personas</th>
+                <th scope="col"> Num Mesa</th>
+                <th scope="col"> Fecha de reservacion</th>
+            </tr>
+            </thead>
+            <tbody>
+            @for (item of mesaList; track $index) {
+                <tr>
+                <td>{{item.idMesa}}</td>
+                <td>{{item.dni}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.apellido}}</td>
+                <td>{{item.cantidadPersonas}}</td>
+                <td>{{item.mesaId}}</td>
+                <td>{{ item.fechaReservacion ? (formatDate(item.fechaReservacion) + ' ' + getCurrentTime()) : 'Sin fecha' }}</td>
+                
+                </tr>
+            }
+
+            
+            </tbody>
+        </table>      
+    </div>
+
+</div>
+
+
+<app-footer></app-footer>
+
