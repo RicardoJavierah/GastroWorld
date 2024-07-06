@@ -9,11 +9,12 @@ import { SliderComponent } from '../../principal/slider/slider.component';
 import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
 import { PlatoInterface } from '../../../models/plato.interface';
 import { PlatoService } from '../../../service/plato/plato.service';
+import { FooterComponent } from '../../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-sopas',
   standalone: true,
-  imports: [NavbarComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule],
+  imports: [NavbarComponent, SliderComponent,CommonModule, FooterComponent, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule],
   templateUrl: './sopas.component.html',
   styleUrl: './sopas.component.css'
 })
@@ -54,7 +55,7 @@ export class SopasComponent {
     this.count = 0;
   }
 
-  navigateToPage() {
-    this.router.navigateByUrl('/platos');
+  navigateToPage(plato: PlatoInterface) {
+    this.router.navigate(['/platos'], { queryParams: { nombre: plato.nombre, precio: plato.precio, disponible: plato.disponible, descripcion: plato.descripcion } });
   }
 };

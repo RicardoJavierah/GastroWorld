@@ -19,7 +19,7 @@
               <button id="conteo" mat-button (click)="increment()"> + </button>
               <button id="conteo" mat-button>{{ count }}</button>
               <button id="conteo" mat-button (click)="decrement()"> - </button>
-              <button id="pedido" mat-button (click)="navigateToPage()">Hacer Pedido</button>
+              <button id="pedido" mat-button (click)="navigateToPage(plato)">Hacer Pedido</button>
             </mat-card-actions>
           </div>
           <div id="image-section" routerLink="/platos">
@@ -29,6 +29,7 @@
       </mat-card>
 }
 </div>
+<app-footer></app-footer>
 
 <!--<section id="container-section-inicio">
     <section id="container-header">

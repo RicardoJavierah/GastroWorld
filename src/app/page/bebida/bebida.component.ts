@@ -9,11 +9,12 @@ import { FoodcardComponent } from '../../shared/components/foodcard/foodcard.com
 import { SaladcardComponent } from '../../shared/components/saladcard/saladcard.component';
 import { Pastcard1Component } from '../../shared/components/contenido/pasta/pastcard1/pastcard1.component';
 import { AngularMaterialModule } from '../../shared/angular-material/angular-material.module';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-bebida',
   standalone: true,
-  imports: [NavbarComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule],
+  imports: [NavbarComponent, FooterComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule],
   templateUrl: './bebida.component.html',
   styleUrl: './bebida.component.css'
 })
@@ -54,7 +55,7 @@ export class BebidaComponent {
     this.count = 0;
   }
 
-  navigateToPage() {
-    this.router.navigateByUrl('/platos');
+  navigateToPage(plato: PlatoInterface) {
+    this.router.navigate(['/platos'], { queryParams: { nombre: plato.nombre, precio: plato.precio, disponible: plato.disponible, descripcion: plato.descripcion } });
   }
 };

@@ -9,11 +9,12 @@ import { SliderComponent } from '../../principal/slider/slider.component';
 import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
 import { PlatoInterface } from '../../../models/plato.interface';
 import { PlatoService } from '../../../service/plato/plato.service';
+import { FooterComponent } from '../../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-carne',
   standalone: true,
-  imports: [NavbarComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule],
+  imports: [NavbarComponent, FooterComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule],
   templateUrl: './carne.component.html',
   styleUrl: './carne.component.css'
 })
@@ -54,7 +55,7 @@ export class CarneComponent {
     this.count = 0;
   }
 
-  navigateToPage() {
-    this.router.navigateByUrl('/platos');
+  navigateToPage(plato: PlatoInterface) {
+    this.router.navigate(['/platos'], { queryParams: { nombre: plato.nombre, precio: plato.precio, disponible: plato.disponible, descripcion: plato.descripcion } });
   }
 };
