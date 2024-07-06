@@ -7,6 +7,7 @@ import { PastasComponent } from './page/pastas/pastas.component';
 import { RegistrarComponent } from './auth/registrar/registrar/registrar.component';
 import { CarritoCompraComponent } from './page/carrito-compra/carrito-compra.component';
 import { PlatosComponent } from './info/platos/platos.component';
+import { NotFoundComponent } from './page/not-found/not-found.component';
 
 export const routes: Routes = [
     {
@@ -33,11 +34,17 @@ export const routes: Routes = [
     },
     {
         path:"carrito",
-        component:CarritoCompraComponent
-    },   
+        component:CarritoCompraComponent,
+        canActivate:[authGuard]
+    }, 
+    {
+        path:"NotFound",
+        component:NotFoundComponent
+    },  
     {
         path: "**", 
         redirectTo: "login", 
         pathMatch:"full"
-    }
+    },
+
 ];
