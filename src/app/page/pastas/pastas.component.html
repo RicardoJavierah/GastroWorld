@@ -3,18 +3,16 @@
         <app-navbar></app-navbar>
     </section>
     <section id="container-main">
-        
         <h1>¡Pastas!</h1>
         <div class="container-promocion">
-            <app-pastcard1></app-pastcard1>
-            <app-pastcard2></app-pastcard2>
-            <app-pastcard3 ></app-pastcard3>
+            <app-pastcard1 *ngFor="let plato of platos.slice(0, 3)" [plato]="plato"></app-pastcard1>
+            <app-pastcard1 *ngFor="let plato of platos.slice(0, 3)" [plato]="plato"></app-pastcard1>
+            <app-pastcard1 *ngFor="let plato of platos.slice(0, 3)" [plato]="plato"></app-pastcard1>
         </div>
         <div class="container-promocion">
-            <app-pastcard4></app-pastcard4>
-            <app-pastcard5></app-pastcard5>
-            <app-pastcard6></app-pastcard6>
+            <app-pastcard1 *ngFor="let plato of platos.slice(0, 3)" [plato]="plato"></app-pastcard1>
+            <app-pastcard1 *ngFor="let plato of platos.slice(0, 3)" [plato]="plato"></app-pastcard1>
+            <app-pastcard1 *ngFor="let plato of platos.slice(0, 3)" [plato]="plato"></app-pastcard1>
         </div>
-        
     </section>
-    
+</section>

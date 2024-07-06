@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AngularMaterialModule } from '../../../../angular-material/angular-material.module';
+import { PlatoInterface } from '../../../../../models/plato.interface';
 
 @Component({
   selector: 'app-pastcard1',
@@ -11,33 +12,36 @@ import { AngularMaterialModule } from '../../../../angular-material/angular-mate
 })
 export class Pastcard1Component {
 
-  constructor(private router : Router){}
-
-  @Input()titulo:String="Ensalada de brotes verdes con feta y nueces";
-  @Input()ingrediente1:String="2 huevos";
-  @Input()ingrediente2:String="1 diente de ajo picado";
-  @Input()ingrediente3:String="1/2 cebolla picada";
-  @Input()ingrediente4:String="Sal y pimienta al gusto";
-  @Input()ingrediente5:String="Aceite de oliva para freír";
-
-
-  navigateToPage(){
-    this.router.navigate(['/platos'])
-  }
+  @Input() plato: PlatoInterface | undefined;
+  @Input() index: number | undefined;
 
   count: number = 0;
-  increment(){
-    if(this.count < 10){
-    this.count++;
+
+  constructor(private router: Router) {}
+
+  increment() {
+    if (this.count < 10) {
+      this.count++;
     }
   }
-  decrement(){
-    if(this.count > 0){
-    this.count--;
+
+  decrement() {
+    if (this.count > 0) {
+      this.count--;
     }
   }
-  reset(){
+
+  reset() {
     this.count = 0;
+  }
+
+  navigateToPage() {
+    this.router.navigate(['/platos'], {
+      queryParams: {
+        platoId: this.plato?.id_plato,
+        count: this.count
+      }
+    });
   }
 
 }

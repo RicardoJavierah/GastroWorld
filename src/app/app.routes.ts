@@ -6,11 +6,9 @@ import { EnsaladasComponent } from './page/ensaladas/ensaladas.component';
 import { PastasComponent } from './page/pastas/pastas.component';
 import { RegistrarComponent } from './auth/registrar/registrar/registrar.component';
 import { CarritoCompraComponent } from './page/carrito-compra/carrito-compra.component';
+import { PlatosComponent } from './info/platos/platos.component';
 
 export const routes: Routes = [
-    /*{path:"navbar",component:NavbarComponent},
-    {path:"slider",component:SliderComponent},
-    {path:"sidenav",component:SidenavComponent},*/
     {
         path:"login",
         component:LoginComponent

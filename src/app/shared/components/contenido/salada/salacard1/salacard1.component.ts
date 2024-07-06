@@ -11,33 +11,30 @@ import { AngularMaterialModule } from '../../../../angular-material/angular-mate
 })
 export class Salacard1Component {
 
-  constructor(private router : Router){}
 
-  @Input()titulo:String="Ensalada de brotes verdes con feta y nueces";
-  @Input()ingrediente1:String="300 g de canónigos";
-  @Input()ingrediente2:String="200 g de queso feta";
-  @Input()ingrediente3:String="100 g de nueces peladas";
-  @Input()ingrediente4:String="2 peras (opcional)";
-  @Input()ingrediente5:String="1 cucharada de miel";
-
-
-  navigateToPage(){
-    this.router.navigate(['/platos'])
-  }
 
   count: number = 0;
-  increment(){
-    if(this.count < 10){
-    this.count++;
+
+  constructor(private router: Router) {}
+
+  increment() {
+    if (this.count < 10) {
+      this.count++;
     }
   }
-  decrement(){
-    if(this.count > 0){
-    this.count--;
+
+  decrement() {
+    if (this.count > 0) {
+      this.count--;
     }
   }
-  reset(){
+
+  reset() {
     this.count = 0;
+  }
+
+  navigateToPage() {
+    this.router.navigate(['/platos']);
   }
 
 }
