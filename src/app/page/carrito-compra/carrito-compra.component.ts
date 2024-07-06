@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AngularMaterialModule } from '../../shared/angular-material/angular-material.module';
 import { MatTableDataSource } from '@angular/material/table';
 import { RouterLink } from '@angular/router';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { CompraService } from '../../service/compra.service';
 
 
 
 export interface ElementoTabla {
-  posicion: number;
   nombre: string;
   descripcion: string;
   precio:number;
@@ -23,18 +23,23 @@ export interface ElementoTabla {
 
 export class CarritoCompraComponent {
 
+  serviceCompra=inject(CompraService)
+  arrayAdd:ElementoTabla[]=[]
+
   ngOnInit(){
     console.log(this.elementos)
   }
 
-  displayedColumns: string[] = ['posicion', 'nombre', 'descripcion','precio', 'acciones'];
+  displayedColumns: string[] = ['nombre', 'descripcion','precio', 'acciones'];
 
-  elementos: ElementoTabla[] = [
-    { posicion: 1, nombre: 'Elemento 1', descripcion: 'Descripción del elemento 1',precio:12.4 },
-    { posicion: 2, nombre: 'Elemento 2', descripcion: 'Descripción del elemento 2',precio:15.90 },
-    { posicion: 3, nombre: 'Elemento 3', descripcion: 'Descripción del elemento 3',precio:17.9 }
+  elementos: ElementoTabla[] = this.serviceCompra.arrayCompra
+  
+  /*[
+    { nombre: 'Elemento 1', descripcion: 'Descripción del elemento 1',precio:12.4 },
+    { nombre: 'Elemento 2', descripcion: 'Descripción del elemento 2',precio:15.90 },
+    {nombre: 'Elemento 3', descripcion: 'Descripción del elemento 3',precio:17.9 }
   ];
-
+*/
   dataSource = new MatTableDataSource(this.elementos)
 
   eliminarElemento(index: number): void {

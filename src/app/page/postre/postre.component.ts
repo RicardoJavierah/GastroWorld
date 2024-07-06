@@ -9,12 +9,13 @@ import { CommonModule } from '@angular/common';
 import { PlatoService } from '../../service/plato/plato.service';
 import { PlatoInterface } from '../../models/plato.interface';
 import { AngularMaterialModule } from '../../shared/angular-material/angular-material.module';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 
 @Component({
   selector: 'app-postre',
   standalone: true,
-  imports: [NavbarComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule],
+  imports: [NavbarComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule, FooterComponent],
   templateUrl: './postre.component.html',
   styleUrl: './postre.component.css'
 })

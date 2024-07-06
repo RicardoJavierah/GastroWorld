@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PlatoInterface } from '../../models/plato.interface';
 import { PlatoService } from '../../service/plato/plato.service';
 import { Router, RouterOutlet } from '@angular/router';
@@ -9,16 +9,21 @@ import { FoodcardComponent } from '../../shared/components/foodcard/foodcard.com
 import { SaladcardComponent } from '../../shared/components/saladcard/saladcard.component';
 import { Pastcard1Component } from '../../shared/components/contenido/pasta/pastcard1/pastcard1.component';
 import { AngularMaterialModule } from '../../shared/angular-material/angular-material.module';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { CompraService } from '../../service/compra.service';
+import { ElementoTabla } from '../carrito-compra/carrito-compra.component';
 
 @Component({
   selector: 'app-bebida',
   standalone: true,
-  imports: [NavbarComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule],
+  imports: [NavbarComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, AngularMaterialModule, FooterComponent],
   templateUrl: './bebida.component.html',
   styleUrl: './bebida.component.css'
 })
 export class BebidaComponent {
   platosBebida: PlatoInterface[] = [];
+  arrayBebida: ElementoTabla[] = [];
+  compraService = inject(CompraService)
 
   constructor(private platoService: PlatoService, private router: Router) { }
 
@@ -35,6 +40,14 @@ export class BebidaComponent {
         }
       }
     );
+  }
+  
+  comprar(plato: PlatoInterface){
+
+    let array:ElementoTabla = {nombre: plato.nombre, descripcion: plato.descripcion, precio: plato.precio}
+    this.arrayBebida.push(array)
+    this.compraService.addCarrito(this.arrayBebida)
+
   }
 
   count: number = 0;

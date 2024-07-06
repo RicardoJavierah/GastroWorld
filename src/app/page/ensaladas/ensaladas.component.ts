@@ -8,11 +8,12 @@ import { PlatoService } from '../../service/plato/plato.service';
 import { PlatoInterface } from '../../models/plato.interface';
 import { AngularMaterialModule } from '../../shared/angular-material/angular-material.module';
 import { Router } from '@angular/router';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-ensaladas',
   standalone: true,
-  imports: [AngularMaterialModule ,NavbarComponent, SliderComponent, FoodcardComponent, SaladcardComponent, Salacard1Component],
+  imports: [AngularMaterialModule ,NavbarComponent, SliderComponent, FoodcardComponent, SaladcardComponent, Salacard1Component, FooterComponent],
   templateUrl: './ensaladas.component.html',
   styleUrl: './ensaladas.component.css'
 })

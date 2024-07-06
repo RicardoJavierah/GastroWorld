@@ -18,8 +18,8 @@
               <button id="conteo" mat-button (click)="increment()"> + </button>
               <button id="conteo" mat-button>{{ count }}</button>
               <button id="conteo" mat-button (click)="decrement()"> - </button>
-              <button id="pedido" mat-button (click)="navigateToPage()">Hacer Pedido</button>
             </mat-card-actions>
+            <button id="pedido" mat-button (click)="comprar(plato)">Comprar</button>
           </div>
           <div id="image-section" routerLink="/platos">
             <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
@@ -28,6 +28,8 @@
       </mat-card>
 }
 </div>
+
+<app-footer></app-footer>
 
 <!--<section id="container-section-inicio">
     <section id="container-header">

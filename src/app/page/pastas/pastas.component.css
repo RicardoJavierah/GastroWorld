@@ -4,7 +4,7 @@
   .container-platos{
     display: grid;
     grid-template-columns: repeat(2, 400px);
-    grid-template-rows: repeat(2, 240px);
+    grid-template-rows: repeat(2, 290px);
     gap: 20px;
     padding: 10px;
     justify-content: center;
@@ -25,8 +25,8 @@
 
   
   .example-card {
-    max-width: 400px;
-    max-height: 240px;
+    max-width: 600px;
+    max-height: 600px;
     border: solid blue 1px;
   }
   
