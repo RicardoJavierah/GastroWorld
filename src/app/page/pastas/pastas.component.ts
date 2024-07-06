@@ -8,11 +8,12 @@ import { Pastcard1Component } from '../../shared/components/contenido/pasta/past
 import { CommonModule } from '@angular/common';
 import { PlatoService } from '../../service/plato/plato.service';
 import { PlatoInterface } from '../../models/plato.interface';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-pastas',
   standalone: true,
-  imports: [NavbarComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet],
+  imports: [NavbarComponent, SliderComponent,CommonModule, FoodcardComponent, SaladcardComponent,Pastcard1Component, RouterOutlet, FooterComponent],
   templateUrl: './pastas.component.html',
   styleUrl: './pastas.component.css'
 })

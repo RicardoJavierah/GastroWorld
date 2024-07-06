@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AngularMaterialModule } from '../../angular-material/angular-material.module';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-pastacard',
   standalone: true,
-  imports: [AngularMaterialModule, RouterLink],
+  imports: [AngularMaterialModule, RouterLink, FooterComponent],
   templateUrl: './pastacard.component.html',
   styleUrl: './pastacard.component.css'
 })

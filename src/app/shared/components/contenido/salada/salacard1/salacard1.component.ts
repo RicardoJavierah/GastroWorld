@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AngularMaterialModule } from '../../../../angular-material/angular-material.module';
+import { FooterComponent } from '../../../footer/footer.component';
 
 @Component({
   selector: 'app-salacard1',
   standalone: true,
-  imports: [AngularMaterialModule,RouterLink],
+  imports: [AngularMaterialModule,RouterLink, FooterComponent],
   templateUrl: './salacard1.component.html',
   styleUrl: './salacard1.component.css'
 })

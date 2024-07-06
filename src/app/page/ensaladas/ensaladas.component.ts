@@ -5,11 +5,12 @@ import { FoodcardComponent } from '../../shared/components/foodcard/foodcard.com
 import { SaladcardComponent } from '../../shared/components/saladcard/saladcard.component';
 import { Salacard1Component } from '../../shared/components/contenido/salada/salacard1/salacard1.component';
 import { PlatoService } from '../../service/plato/plato.service';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-ensaladas',
   standalone: true,
-  imports: [NavbarComponent, SliderComponent, FoodcardComponent, SaladcardComponent, Salacard1Component],
+  imports: [NavbarComponent, SliderComponent, FoodcardComponent, SaladcardComponent, Salacard1Component, FooterComponent],
   templateUrl: './ensaladas.component.html',
   styleUrl: './ensaladas.component.css'
 })
