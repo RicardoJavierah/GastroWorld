@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AngularMaterialModule } from '../../angular-material/angular-material.module';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,5 +10,16 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  router = inject(Router);
+
+  constructor(){
+
+  }
+
+  cerrarSession(){
+    localStorage.removeItem("datos");
+    this.router.navigateByUrl("/login")
+  }
   
 }

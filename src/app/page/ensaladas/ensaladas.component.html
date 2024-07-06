@@ -1,14 +1,14 @@
 <section id="container-header">
     <app-navbar></app-navbar>
 </section>
+<h1>¡Platos de Ensaladas!</h1>
 <div class="container-platos">
 @for (plato of platosEnsalada; track $index) {
     <mat-card class="example-card" appearance="outlined">
-        
         <div id="mat-card-content-promocion">
           <div id="info-section">
             <ul id="info">
-              <li>{{ plato.nombre }}</li>
+              <h1>{{ plato.nombre }}</h1>
               <li>Precio: {{ plato.precio }}</li>
               <li>Disponible: {{ plato.disponible }}</li>
               <li>{{ plato.descripcion }}</li>

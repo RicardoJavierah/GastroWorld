@@ -3,7 +3,7 @@
         <img id="icon-navbar" src="../../../../assets/icon/gastroWorld.png" alt="gastroWorldpng">
     </div>
 
-    <div id="menu">
+    <!--<div id="menu">
         
         <div class="container-texto-menu">
             <div>
@@ -59,17 +59,32 @@
             </div>
             <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="keyboard_arrow_down"></mat-icon>
         </div>       
-    </div>
+    </div>-->
+    
+
     <div id="container-btn-user">
+
+        <div id="container-btn-user">
+            <a class="btn-reserva" mat-fab extended routerLink="/mesa">
+                <mat-icon>event_seat</mat-icon>
+                Reserva
+              </a>
+
         <a class="btn-user" mat-fab extended routerLink="/login">
             <mat-icon>person</mat-icon>
             Ingresar
           </a>
 
-          <a class="btn-cart"mat-fab extended routerLink=".">
+          <a class="btn-cart"mat-fab extended routerLink="/carrito">
             <mat-icon>shopping_cart</mat-icon>
-            Ingresar
+            Compras
           </a>
+
+          <a class="btn-exit" mat-fab extended (click)="cerrarSession()">
+            <mat-icon>logout</mat-icon>
+            Salir
+          </a>
+        </div>
 
     </div>
 </section>
@@ -77,10 +92,10 @@
     <ul id="container-name-categoria">
         <div routerLink="/ensaladas">Ensaladas</div>
         <div routerLink="/pastas">Pastas</div>
-        <div>Carnes</div>
-        <div>Sopas</div>
-        <div>Bebidas</div>
-        <div>Postres</div>
+        <div routerLink="/carnes">Carnes</div>
+        <div routerLink="/sopas">Sopas</div>
+        <div routerLink="/bebidas">Bebidas</div>
+        <div routerLink="/postres">Postres</div>
 
     </ul>
 </section>

@@ -1,3 +1,21 @@
-table{
+.mat-elevation-z8{
+    width: 70%;
+}
+.container-btn{
     width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+a{
+    margin:30px;
+}
+.container-data{
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+}
+*{
+    
 }
