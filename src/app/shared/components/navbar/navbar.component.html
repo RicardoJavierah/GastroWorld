@@ -3,7 +3,7 @@
         <img id="icon-navbar" src="../../../../assets/icon/gastroWorld.png" alt="gastroWorldpng">
     </div>
 
-    <div id="menu">
+    <!--<div id="menu">
         
         <div class="container-texto-menu">
             <div>
@@ -59,8 +59,17 @@
             </div>
             <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="keyboard_arrow_down"></mat-icon>
         </div>       
-    </div>
+    </div>-->
+    
+
     <div id="container-btn-user">
+
+        <div id="container-btn-user">
+            <a class="btn-reserva" mat-fab extended routerLink="/login">
+                <mat-icon>event_seat</mat-icon>
+                Reserva
+              </a>
+
         <a class="btn-user" mat-fab extended routerLink="/login">
             <mat-icon>person</mat-icon>
             Ingresar
@@ -68,8 +77,14 @@
 
           <a class="btn-cart"mat-fab extended routerLink=".">
             <mat-icon>shopping_cart</mat-icon>
-            Ingresar
+            Compras
           </a>
+
+          <a class="btn-exit" mat-fab extended routerLink="/login">
+            <mat-icon>logout</mat-icon>
+            Salir
+          </a>
+        </div>
 
     </div>
 </section>
